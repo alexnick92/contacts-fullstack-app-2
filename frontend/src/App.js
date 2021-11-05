@@ -14,13 +14,13 @@ import {
   Label,
 } from "reactstrap";
 
-import contactData from "./assets/data/contactData";
+// import contactData from "./assets/data/contactData";
 
 function App() {
-  //const [viewCompleted, setViewCompleted] = useState(false)
+
   const [contactList, setContactList] = useState([]);
   const [name, setName] = useState("");
-  const [phoneNo, setPhoneNo] = useState("");
+  const [number, setNumber] = useState("");
 
   useEffect(() => {
     axios
@@ -36,29 +36,31 @@ function App() {
 
     const contact = {
       name: name,
-      phone_number: phoneNo,
+      number: number,
     };
     axios.post("/api/contacts/", contact).catch((err) => console.log(err));
     return;
   };
-
+ 
   const renderContacts = () => {
-    return contactData.map((item) => (
+    return contactList.map((contact) => (
       <ul
-        key={item.id}
+        key={contact.id}
+        
         className="list-group-item d-flex justify-content-between align-items-center"
       >
         <li>
+       
           <span
             // className={"name-title"}
             className="mx-auto justify-content-between text-uppercase ml-2 mr-2 "
           >
-            {item.name}
+            {contact.name}
           </span>
         </li>
         <li>
           <span className="mx-auto justify-content-between text-uppercase ml-2 mr-2 ">
-            {item.number}
+            {contact.number}
           </span>
         </li>
       </ul>
@@ -86,7 +88,6 @@ function App() {
               </div>
             </div>
           </div>
-          <Add />
         </main>
 
         <nav>
@@ -117,8 +118,8 @@ function App() {
                 type="text"
                 name="phone_number"
                 placeholder="Enter Phone Number"
-                onChange={(e) => setPhoneNo(e.target.value)}
-                value={phoneNo}
+                onChange={(e) => setNumber(e.target.value)}
+                value={number}
               />
             </label>
             <button type="submit" onClick={handleSubmit}>
@@ -144,73 +145,3 @@ function App() {
 }
 
 export default App;
-
-// import logo from "./logo.svg";
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-// import "./App.css";
-
-// function App() {
-//   const [contactList, setContactList] = useState([]);
-//   const [name, setName] = useState("");
-//   const [phoneNo, setPhoneNo] = useState("");
-
-//   useEffect(() => {
-//     axios
-//       .get("/api/contacts/")
-//       .then((res) => setContactList(res.data))
-//       .catch((err) => console.log(err));
-//   }, []);
-
-//   const handleSubmit = () => {
-//     // if(item.id){
-//     //   axios.put(`/api/contacts/${item.id}/`, item)
-//     // }
-
-//     const contact = {
-//       "name": name,
-//       "phone_number": phoneNo,
-//     };
-//     axios.post("/api/contacts/", contact).catch((err) => console.log(err));
-//     return
-//   };
-
-//   return (
-//     <div className="App">
-//       <h1>My Contact List</h1>
-//       <ul>
-//         {contactList.map((contact) => (
-//           <li key={contact.id}>
-//             {contact.name} {contact.phone_number}
-//           </li>
-//         ))}
-//       </ul>
-
-//       <form>
-//         <label>
-//           Name:
-//           <input
-//             type="text"
-//             name="name"
-//             placeholder="Enter Name ..."
-//             onChange={(e) => setName(e.target.value)}
-//             value={name}
-//           />
-//         </label>
-//         <label>
-//           Phone Number:
-//           <input
-//             type="text"
-//             name="phone_number"
-//             placeholder="Enter Phone Number"
-//             onChange={(e) => setPhoneNo(e.target.value)}
-//             value={phoneNo}
-//           />
-//         </label>
-//           <button type="submit" onClick={handleSubmit}>Submit</button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default App;
