@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.row{
+  /* background-color: pink; */
+}
+
+.card{
+  /* background-color: aqua; */
+  flex: auto;
+  margin: 1rem;
+
+}
+
+.list-group-item{
+border:none !important;
+text-align: center;
+justify-content:space-evenly;
+/* padding-left: 2; */
+margin: 1rem;
+}
+
+
+.contacts-title{
+  padding-right: 600px;
+}
+
+.name-title{
+  padding-right: 600px;
+}
