@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:8000",
   "dependencies": {
+    "antd": "^4.16.13",
     "axios": "^0.24.0",
     "bootstrap": "^4.6.0",
     "cra-template": "1.1.2",
