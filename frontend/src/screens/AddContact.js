@@ -30,14 +30,12 @@ function AddContact() {
   return (
     <>
       <div>
-        <h1 className="text-secondary text-uppercase text-center my-4 ">
-          Add A Contact
-        </h1>
+        <h1 className="App-header">Add A Contact</h1>
 
         <form>
           <div className="row">
             <div className="col-md-6 col-sm-10 mx-auto p-2">
-              <div className="card p-3">
+              <div className="card p-2">
                 <div className="text-secondary text-uppercase text-center my-4 ">
                   <label>
                     Name:
@@ -55,7 +53,7 @@ function AddContact() {
             </div>
 
             <div className="col-md-6 col-sm-10 mx-auto p-2">
-              <div className="card p-3">
+              <div className="card p-2">
                 <div className="text-secondary text-uppercase text-center my-4 ">
                   <label>
                     Phone Number:
@@ -73,16 +71,20 @@ function AddContact() {
             </div>
           </div>
 
-          <div className="row col-md-2 col-sm-10 mx-auto p-3 ">
-            <input
-              style={{ marginRight: 20 }}
-              type="submit"
-              value="Submit"
-              onClick={handleSubmit}
-            />
-            <Link to="/">
-              <button className=" btn btn-primary text-center">Back</button>
-            </Link>
+          <div className=" col-md-2 col-sm-10 mx-auto p-3 ">
+            <div className=" p-3 ">
+              <input
+              className=" btn btn-primary text-center"
+                type="submit"
+                value="Submit"
+                onClick={handleSubmit}
+              />
+            </div>
+            <div className=" p-3 ">
+              <Link to="/">
+                <button className=" btn btn-secondary text-center" >Back</button>
+              </Link>
+            </div>
           </div>
         </form>
       </div>

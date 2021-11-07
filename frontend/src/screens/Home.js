@@ -23,18 +23,20 @@ function Home() {
     return contactList.map((contact) => (
       <ul
         key={contact.id}
-        className="list-group-item d-flex justify-content-between align-items-center"
+        className="list-group-item d-flex justify-content-around"
       >
         <li>
           <div
-            // className={"name-title"}
-            className="mx-auto justify-content-between text-uppercase ml-2 mr-2 "
+             className={"name-title"}
+          
           >
             {contact.name}
           </div>
         </li>
         <li>
-          <div className="mx-auto justify-content-between text-uppercase ml-2 mr-2 ">
+          <div 
+            className={"name-title"}
+          >
             {contact.number}
           </div>
         </li>
@@ -52,18 +54,18 @@ function Home() {
   return (
     <>
       <main>
-        <h1 className="text-secondary text-uppercase text-center my-4 ">
+        <h1 className="App-header">
           Contact Book App
         </h1>
         <div className="row">
           <div className="col-md-6 col-sm-10 mx-auto p-2">
-            <div className="card p-3">
-              <div className="text-secondary text-uppercase text-center my-4 ">
+            <div className="card">
+              <div className="text-secondary text-center m-3">
                 <Link to="/add">
-                  <button className=" btn btn-primary ">Add contact</button>
+                  <button className=" btn btn-primary text-uppercase ">Add contact</button>
                 </Link>
               </div>
-              <ul className="list-group list-group-flush border-top-0">
+              <ul className="list-group">
                 {renderContacts()}
               </ul>
             </div>

@@ -14,8 +14,9 @@
 }
 
 .App-header {
+  text-transform:uppercase;
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,23 +45,31 @@
 .card{
   /* background-color: aqua; */
   flex: auto;
-  margin: 1rem;
+  margin: 1vh;
+  padding: 0vh;
 
 }
 
 .list-group-item{
-border:none !important;
-text-align: center;
-justify-content:space-evenly;
+background-color:rosybrown;
+text-transform:uppercase;
+/* justify-content:space-evenly; */
+padding-left:30px;
+padding-right:30px;
 /* padding-left: 2; */
-margin: 1rem;
+font-size: calc(5px + 1vmin);
+list-style: none;
 }
+/* mx-auto justify-content-between text-uppercase ml-2 mr-2  */
 
 
 .contacts-title{
-  padding-right: 600px;
+  padding-right: 6px;
+
+
 }
 
 .name-title{
-  padding-right: 600px;
+  padding-right: 6px;
+
 }
